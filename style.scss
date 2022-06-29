@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "poppins", sans-serif;
+  color: #000;
+
+  text-decoration: none;
+  list-style: none;
+
+  img {
+    width: 100%;
+  }
+}
+
+$blue: #0989ea;
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1550px;
+
+  margin: auto;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 10vh;
+
+    padding: 0.5em 1em;
+
+    .logo {
+      width: 120px;
+    }
+
+    .navBar {
+      display: none;
+
+      @media screen and (min-width: 950px) {
+        display: flex;
+        align-items: center;
+        gap: 4em;
+
+        a {
+          font-weight: 500;
+          text-transform: capitalize;
+
+          padding: 0.4em 0.6em;
+
+          transition: 0.4s all ease;
+
+          &:hover {
+            color: $blue;
+            text-decoration: underline;
+          }
+          &.secondaryCta {
+            border: 2px solid $blue;
+            border-radius: 0.6em;
+
+            text-decoration: none;
+            transition: 0.4s all ease;
+
+            &:hover {
+              border-color: #000;
+              background: #000;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .menu {
+      cursor: pointer;
+      transition: 0.4s all ease;
+
+      @media screen and (min-width: 950px) {
+        display: none;
+      }
+
+      &:hover {
+        .text {
+          color: $blue;
+        }
+      }
+
+      .stroke {
+        width: 26px;
+        height: 3px;
+
+        margin: auto;
+        margin-bottom: 4px;
+
+        background: #000;
+
+        border-radius: 30px;
+      }
+      .text {
+        font-size: 0.6rem;
+        font-weight: bold;
+        line-height: 1;
+        text-transform: uppercase;
+
+        transition: 0.4s all ease;
+      }
+    }
+  }
+
+  .banner {
+    height: 90vh;
+
+    .content {
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (min-width: 950px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .leftContent {
+      text-align: center;
+
+      padding: 1rem;
+      margin-bottom: 2em;
+
+      @media screen and (min-width: 950px) {
+        text-align: left;
+        width: 50%;
+      }
+      h1 {
+        width: 90%;
+        margin: 0 5%;
+        margin-bottom: 1em;
+
+        font-size: 3rem;
+        line-height: 1;
+
+        position: relative;
+
+        span {
+          color: $blue;
+        }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: block;
+          content: "";
+
+          width: 100%;
+          height: 110%;
+
+          background: #fff;
+        }
+
+        @media screen and (min-width: 950px) {
+          font-size: 5rem;
+          margin-bottom: 0.6em;
+
+          width: 95%;
+        }
+      }
+
+      p {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 1em;
+
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: block;
+          content: "";
+
+          width: 100%;
+          height: 110%;
+
+          background: #fff;
+        }
+
+        @media screen and (min-width: 950px) {
+          width: 70%;
+          margin: 0 5% 2em 5%;
+        }
+      }
+
+      button {
+        position: absolute;
+        bottom: 5%;
+        left: 35%;
+
+        width: 30%;
+
+        padding: 0.8em 1em;
+        border-radius: 0.6em;
+
+        border: none;
+        outline: none;
+
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        background: $blue;
+        color: #fff;
+
+        z-index: 1;
+
+        transition: 0.4s all ease;
+        cursor: pointer;
+
+        &:hover {
+          background: #000;
+        }
+
+        @media screen and (min-width: 950px) {
+          position: static;
+          width: max-content;
+          padding: 0.8em 1.5em;
+          margin: 0 5%;
+        }
+      }
+    }
+
+    .rightContent {
+      padding: 1rem;
+      @media screen and (min-width: 950px) {
+        width: 50%;
+      }
+
+      .content {
+        position: relative;
+
+        img.phone {
+          // z-index: 1;
+          width: 98%;
+        }
+        img.blop {
+          position: absolute;
+          top: 15%;
+          left: 15%;
+          width: 60%;
+
+          transform: rotate(-45deg);
+
+          z-index: -4;
+        }
+      }
+    }
+  }
+}
